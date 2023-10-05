@@ -10,6 +10,7 @@ module.exports = {
             job: ["POST", "PUT", "DELETE", "GET"],
             language: ["POST", "PUT", "DELETE", "GET"],
             project: ["POST", "PUT", "DELETE", "GET"],       
+            skills: ["POST", "PUT", "DELETE", "GET"], 
         }
     },
     user:{
@@ -19,7 +20,9 @@ module.exports = {
             education: ["POST", "PUT", "DELETE", "GET"],
             job: ["POST", "PUT", "DELETE", "GET"],
             language: ["POST", "PUT", "DELETE", "GET"],
-            project: ["POST", "PUT", "DELETE", "GET"],       
+            project: ["POST", "PUT", "DELETE", "GET"],      
+            // skills: ["POST", "PUT", "DELETE", "GET"], 
+         
         }
     },
 }

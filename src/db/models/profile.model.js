@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
+const Skill = require("./skill.model");
 const { Schema } = mongoose;
+
 
 const profileSchema = new Schema({
   userId:String, 
@@ -17,6 +19,10 @@ const profileSchema = new Schema({
   lifeStyle: String,
   portafolio: String,
   socialNework: String,
+  skills : [{
+    type: Schema.Types.ObjectId,
+    ref: "Skills"
+  }]
 });
 
 const Profile = mongoose.model("Profile", profileSchema);
