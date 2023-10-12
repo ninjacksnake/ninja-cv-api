@@ -1,0 +1,27 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "Your API"
+  description: "API documentation for Your Node.js application"
+paths:
+  /api/users:
+    get:
+      summary: "Get a list of users"
+      description: "Returns a list of all users."
+      responses:
+        200:
+          description: "A list of users."
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/User"
+definitions:
+  User:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        description: "The user's ID."
+      name:
+        type: "string"
+        description: "The user's name."

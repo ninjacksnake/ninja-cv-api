@@ -19,10 +19,7 @@ const profileSchema = new Schema({
   lifeStyle: String,
   portafolio: String,
   socialNework: String,
-  skills : [{
-    type: Schema.Types.ObjectId,
-    ref: "Skills"
-  }]
+  skills : Array,
 });
 
 const Profile = mongoose.model("Profile", profileSchema);

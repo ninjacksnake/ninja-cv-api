@@ -27,9 +27,8 @@ module.exports.create = async function (req, res, next) {
 module.exports.remove = async function (req, res, next) {
   try {
     const jobId = req.params.jobId;
-    console.log('job controller remove method jobId =',jobId);
     const job = await Job.findById(jobId);
-    if (!Job) {
+    if (!job) {
       return res.status(500).json({ error: "Job not found." });
     }
     await Job.findOneAndDelete({ _id: jobId});
@@ -66,7 +65,6 @@ module.exports.find = async function (req, res, next) {
       if (job.length === 0) {
         return res.status(205).json({ message: "Jobs records not found" });
       }
-      console.log(job);
       return res.status(200).json(job);
     } else {
       return res.status(500).json({ error: "Failed to find a job." });

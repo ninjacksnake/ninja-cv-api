@@ -43,7 +43,6 @@ module.exports.find = async function (req, res, next) {
     console.log("🚀 ~ file: project.controller.js:41 ~ profileId:", profileId);
     if (profileId) {
       project = await Project.find({ profileId: profileId });
-      console.log("🚀 ~ file: project.controller.js:44 ~ project:", project);
       if (project.length === 0) {
         return res.status(404).json({ message: "Project not found" });
       }

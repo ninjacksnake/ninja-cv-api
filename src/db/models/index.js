@@ -9,7 +9,7 @@ const models = {
   Profile: require("./profile.model"),
   Project: require("./project.model"),
   User: require("./user.model"),
-  Skills: require("./skill.model.js"),
+  Skill: require("./skill.model.js"),
 };
 
 module.exports = models;

@@ -13,8 +13,7 @@ const authorization = (req, user) => {
 };
 
 const authMiddleware = (req, res, next) => {
-  console.log("auth in action");
-  console.log(req.header('authorization'))
+ console.log("Auth")
   try {
     // Get the token from the request header
     const token = req

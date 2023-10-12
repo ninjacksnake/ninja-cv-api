@@ -1,6 +1,7 @@
 const { Skill } = require("../db/models/index");
 
 module.exports.create = async function (req, res, next) {
+  console.log("creating skill");
   try {
     const data = req.body;
     const newSkill = new Skill({
@@ -43,7 +44,12 @@ module.exports.find = async function (req, res, next) {
       }
       return res.status(200).json(skill);
     }
-    return res.status(404).json({ message: "Skill not found" });
+    skill = await Skill.find();
+    if (skill.length === 0) {
+      return res.status(404).json({ message: "Skill not found" });
+    }
+    return res.status(200).json(skill);
+    //  return res.status(404).json({ message: "Skill not found" });
   } catch (error) {
     console.log(error);
     return res.status(500).json({ error: "Unexpected error occured." });
